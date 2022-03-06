@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     marginTop: 25,
-    borderRight: "2px solid grey",
+    borderRight: "2px solid gold",
   },
 }));
 
@@ -107,7 +107,7 @@ const Coin = () => {
           )}
         </Typography>
         <Typography variant="h5">
-          Current Price: {symbol}{" "}
+          Market Cap: {symbol}{" "}
           {numberWithCommas(
             coin?.market_data.market_cap[currency.toLowerCase()]
               .toString()
