@@ -43,7 +43,9 @@ const Header = () => {
         <AppBar position="static" color="transparent">
           <Toolbar>
             <Typography onClick={() => history("/")} className={classes.title}>
-              <h2>Crypto Finder</h2>
+              <h2>
+                Crypto<span style={{ fontWeight: "bolder" }}>Finder</span>
+              </h2>
             </Typography>
             <Select
               variant="outlined"
