@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     padddingTop: 0,
     textAlign: "justify",
   },
+  extra: {
+    color: "gold",
+  },
   marketData: {
     alignSelf: "start",
     width: "100%",
@@ -69,7 +72,6 @@ const Coin = () => {
   const { currency, symbol } = CryptoState();
 
   const fetchCoin = async () => {
-    console.log(">>>>>>>>>>>>>", id);
     const { data } = await axios.get(SingleCoin(id));
     setCoin(data);
   };
@@ -99,14 +101,16 @@ const Coin = () => {
         <Typography className={classes.description} variant="subtitle1">
           {coin?.description?.en?.split(". ")[0]}
         </Typography>
-        <Typography variant="h5">Rank: #{coin?.market_cap_rank}</Typography>
-        <Typography variant="h5">
+        <Typography className={classes.extra} variant="h5">
+          Rank: #{coin?.market_cap_rank}
+        </Typography>
+        <Typography className={classes.extra} variant="h5">
           Current Price: {symbol}{" "}
           {numberWithCommas(
             coin?.market_data.current_price[currency.toLowerCase()]
           )}
         </Typography>
-        <Typography variant="h5">
+        <Typography className={classes.extra} variant="h5">
           Market Cap: {symbol}{" "}
           {numberWithCommas(
             coin?.market_data.market_cap[currency.toLowerCase()]
